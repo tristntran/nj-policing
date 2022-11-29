@@ -2,6 +2,7 @@
 library(readr)
 library(dplyr)
 library(tidyverse)
+library(reshape2)
 department_df <- read_csv("data/UOF_BY_DEPARTMENTS.csv") %>% 
   select(pd_dept, pct_complaince_hold, pct_hands_fists,
          pct_pepper_spray, pct_baton, pct_take_down,

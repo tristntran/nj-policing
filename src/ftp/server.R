@@ -17,7 +17,18 @@ shinyServer(function(input, output) {
                              force_type %in% c(input$forceChoicesInput))
   })
   officer_data <- reactive({
-    officer_df %>% filter(pd_dept == input$departmentInput)
+    officer_df %>% filter(pd_dept == input$departmentInput) %>%
+      group_by(Officer_Name2) %>% 
+      summarise(
+        count_incedents = n_distinct(INCIDENTID),
+        count_compliance_hold = sum(label =="compliance_hold"),
+        count_hand_fists = sum(label =="hands_fists"),
+        count_pepper_spray = sum(label == "pepper_spray"),
+        count_baton = sum(label == "baton"),
+        count_take_down = sum(label == "take_down"),
+        count_leg_strikes = sum(label == "leg_strikes"),
+        count_deadly_force = sum(label == "deadly_force")
+      )
   })
   output$improvePlotOutput <- renderPlot(
      ggplot(dept_data()) + 
