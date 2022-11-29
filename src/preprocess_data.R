@@ -12,7 +12,7 @@ translation_df <- read_csv("data/translation.csv") %>% filter(!is.na(agency_name
 useofforce_df <- read_csv("data/useofforce.csv") %>% filter(!is.na(label))
 # melt department DF
 
-department_df$period <- 1216
+department_df$period <- 2016
 
 
 # create a second department_df based on teh officer df
