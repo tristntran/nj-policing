@@ -30,9 +30,13 @@ shinyUI(fluidPage(
           # officer_df$deadly_force <- TRUE
             checkboxGroupInput("icons", "Use of Force:",
                                choiceNames =
-                                 list(icon("gun"), icon("hand-fist"),
-                                      icon("pepper-hot"), icon("bug"),
-                                      icon("bug"), icon("bug")),
+                                 list(h4("Compliance Hold",icon("gun")),
+                                      h4("Hand/Fists",icon("pepper-hot")),
+                                      h4("Pepper Spray", icon("bug")),
+                                      h4("Baton",icon("bug"), icon("bug")),
+                                      h4("Take Down",icon("bug"), icon("bug")),
+                                      h4("Deadly Force", icon("hand-fist"))
+                                      ),
                                choiceValues =
                                  list("compliance_hold", "hand_fists",
                                       "pepper_spray", "baton", "take_down",
@@ -50,9 +54,9 @@ shinyUI(fluidPage(
           # something like this
           # https://stackoverflow.com/questions/69287397/in-r-shiny-when-rendering-conditional-panels-in-main-panel-how-to-change-view-w
           tabsetPanel(
-            tabPanel("Plot", plotOutput("plot")),
-            tabPanel("Summary", verbatimTextOutput("summary")), # some analysis and description
-            tabPanel("Officers", tableOutput("table")) # render a table of officers and their statistics
+            tabPanel("Plot", plotOutput("improvePlotOuptut")),
+            tabPanel("Summary", verbatimTextOutput("textSummaryOuptut")), # some analysis and description
+            tabPanel("Officers", tableOutput("officerTableOuptut")) # render a table of officers and their statistics
           )
         )
     )
