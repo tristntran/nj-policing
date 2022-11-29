@@ -22,17 +22,24 @@ shinyUI(fluidPage(
       
         sidebarPanel(
             # Change icons to pictures of the different 
+          # officer_df$compliance_hold <- TRUE
+          # officer_df$hand_fists <- TRUE
+          # officer_df$pepper_spray <- TRUE
+          # officer_df$baton <- TRUE
+          # officer_df$take_down <- TRUE
+          # officer_df$deadly_force <- TRUE
             checkboxGroupInput("icons", "Use of Force:",
                                choiceNames =
                                  list(icon("gun"), icon("hand-fist"),
-                                      icon("pepper-hot"), icon("bug")),
+                                      icon("pepper-hot"), icon("bug"),
+                                      icon("bug"), icon("bug")),
                                choiceValues =
-                                 list("gun", "bed", "cog", "bug")
+                                 list("compliance_hold", "hand_fists",
+                                      "pepper_spray", "baton", "take_down",
+                                      "deadly_force")
             ),
             selectInput("variable", "Department:",
-                        c("Cylinders" = "cyl",
-                          "Transmission" = "am",
-                          "Gears" = "gear"))
+                        final_dept_df$pd_dept)
         ),
 
         # Show a plot of the generated distribution
