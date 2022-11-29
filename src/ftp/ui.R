@@ -21,11 +21,6 @@ shinyUI(fluidPage(
       # Checkbox input to display options
       
         sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30),
             # Change icons to pictures of the different 
             checkboxGroupInput("icons", "Use of Force:",
                                choiceNames =
@@ -43,8 +38,15 @@ shinyUI(fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
           # Just the main plot. Gonna be a line graph
-            plotOutput("distPlot")
+          # plotOutput("distPlot")
           # maybe have a couple of tabs for different views if i have time.
+          # something like this
+          # https://stackoverflow.com/questions/69287397/in-r-shiny-when-rendering-conditional-panels-in-main-panel-how-to-change-view-w
+          tabsetPanel(
+            tabPanel("Plot", plotOutput("plot")),
+            tabPanel("Summary", verbatimTextOutput("summary")), # some analysis and description
+            tabPanel("Officers", tableOutput("table")) # render a table of officers and their statistics
+          )
         )
     )
 ))
