@@ -27,11 +27,9 @@ shinyAppDir(
 )
 ```
 
-Note the use of the `height` parameter to determine how much vertical space the embedded application should occupy.
+This app features two inputs that allow the user to select the type of force they would like to query for the visual. This checkbox input will select which types of forxe will be used where we will display the change between the period between 2012-2016 and 2020-2021.
 
-You can also use the `shinyApp` function to define an application inline rather then in an external directory.
-
-In all of R code chunks above the `echo = FALSE` attribute is used. This is to prevent the R code within the chunk from rendering in the document alongside the Shiny components.
+The drop down list allows the user to select which departments which to visualize. The summary tabs and officers tabs allow 
 
 
 
