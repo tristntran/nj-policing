@@ -13,21 +13,38 @@ library(shiny)
 shinyUI(fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
-
+    titlePanel("New Jersey Policing"),
     # Sidebar with a slider input for number of bins
     sidebarLayout(
+      # Dropdown list for department
+      
+      # Checkbox input to display options
+      
         sidebarPanel(
             sliderInput("bins",
                         "Number of bins:",
                         min = 1,
                         max = 50,
-                        value = 30)
+                        value = 30),
+            # Change icons to pictures of the different 
+            checkboxGroupInput("icons", "Use of Force:",
+                               choiceNames =
+                                 list(icon("gun"), icon("hand-fist"),
+                                      icon("pepper-hot"), icon("bug")),
+                               choiceValues =
+                                 list("gun", "bed", "cog", "bug")
+            ),
+            selectInput("variable", "Department:",
+                        c("Cylinders" = "cyl",
+                          "Transmission" = "am",
+                          "Gears" = "gear"))
         ),
 
         # Show a plot of the generated distribution
         mainPanel(
+          # Just the main plot. Gonna be a line graph
             plotOutput("distPlot")
+          # maybe have a couple of tabs for different views if i have time.
         )
     )
 ))

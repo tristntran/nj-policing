@@ -19,9 +19,10 @@ shinyServer(function(input, output) {
         bins <- seq(min(x), max(x), length.out = input$bins + 1)
 
         # draw the histogram with the specified number of bins
+        # change this to a ggplot thing
         hist(x, breaks = bins, col = 'darkgray', border = 'white',
              xlab = 'Waiting time to next eruption (in mins)',
-             main = 'Histogram of waiting times')
+             main = 'Change in number of incidents 2012-2016 vs 2020-2021')
 
     })
 
