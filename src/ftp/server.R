@@ -34,7 +34,8 @@ shinyServer(function(input, output) {
      ggplot(dept_data()) + 
       aes(x= period, y = percent,
           group = force_type, color = force_type) +
-      geom_line()
+      geom_line() + ggtitle("Use of Force by Category") + theme_bw() +
+      labs(y= "Percent of Incidents", x = "Year Group")
   )
   output$deptTableOuput <- renderTable(x <- dept_data())
   output$officerTableOuput <- renderTable(x <- officer_data())

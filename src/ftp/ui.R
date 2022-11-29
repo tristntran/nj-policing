@@ -40,7 +40,7 @@ shinyUI(fluidPage(
                                       h4("Deadly Force", icon("skull"))
                                       ),
                                choiceValues =
-                                 list("pct_complaince_hold", "pct_hands_fists",
+                                 list("pct_compliance_hold", "pct_hands_fists",
                                       "pct_pepper_spray", "pct_baton",
                                       "pct_take_down", "pct_leg_strikes",
                                       "pct_deadly_force")

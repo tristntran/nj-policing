@@ -8,6 +8,7 @@ runtime: shiny
 
 ```{r setup, include=FALSE}
 source('src/preprocess_data.R')
+library(shiny)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -22,12 +23,12 @@ It's also possible to embed an entire Shiny application within an R Markdown doc
 shinyAppDir(
   "src/ftp",
   options = list(
-    width = "100%", height = 550
+    width = "100%", height = 700
   )
 )
 ```
 
-This app features two inputs that allow the user to select the type of force they would like to query for the visual. This checkbox input will select which types of forxe will be used where we will display the change between the period between 2012-2016 and 2020-2021.
+This app features two inputs that allow the user to select the type of force they would like to query for the visual. This checkbox input will select which types of force will be used where we will display the change between the period between 2012-2016 and 2020-2021.
 
 The drop down list allows the user to select which departments which to visualize. The summary tabs and officers tabs allow 
 
