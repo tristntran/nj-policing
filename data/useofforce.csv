@@ -3,9 +3,9 @@ Usedtakedownon,take_down
 DischargedChemicalat,pepper_spray
 Usedarms,deadly_force
 Usedarmbaron,baton
-Other,
-Usedpressurepointson,
-PointingFirearm,
+Other,hands_fists
+Usedpressurepointson,compliance_hold
+PointingFirearm,deadly_force
 Usedarms/hands,hands_fists
 DischargedFirearmat,deadly_force
 Usedlegs/kicks,leg_strikes
@@ -18,9 +18,9 @@ Complianceholdwithimpactweapon-notastrike,compliance_hold
 HighVolumeOCSpray,pepper_spray
 Usedhead,hands_fists
 KneelingonChest,deadly_force
-Back,
-Caninebit(apprehension),
-CEDSparkDisplay,
+Back,compliance_hold
+Caninebit(apprehension),deadly_force
+CEDSparkDisplay,compliance_hold
 UsedLess-lethaldeviceon,baton
 CSGas,pepper_spray
-Caninebit(spontaneous),
+Caninebit(spontaneous),deadly_force
